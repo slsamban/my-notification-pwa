@@ -28,69 +28,74 @@ console.log('Permission:', permission);
 
 switch (permission) {
   case 'granted':
-    //sendNotificationButton.hidden = true
+    showNotificationButton.hidden = false;
+    sendNotificationButton.hidden = true;
+    notificationTitle.disabled = false;
+    notificationBody.disabled = false;
     console.log('Granted!')
-    //showMyNotification();
     break;
 
   case 'denied':
-    //showNotificationButton.hidden = true
-   // notificationBody .hidden = true
-    //notificationTitle.hidden = true
+    showNotificationButton.hidden = true;
+    sendNotificationButton.hidden = false;
+    notificationTitle.disabled = true;
+    notificationBody.disabled = true;
     console.log('Denied!')
     break;
 
   case 'default':
-    //notificationForm.disabled = true
-    //showNotificationButton.hidden = true
-    //notificationBody .hidden = true
-    //notificationTitle.hidden = true
+    showNotificationButton.hidden = true;
+    sendNotificationButton.hidden = false;
+    notificationTitle.disabled = true;
+    notificationBody.disabled = true;
     console.log('Default!')
-    requestUserPermission();
     break;
 }
 
 function showMyNotification() {
-  console.log('In show Notifications!')
+  console.log('In show My Notifications!')
 
   const title = document.getElementById('notification-title').value;
   const body = document.getElementById('notification-body').value;
 
-  if(title==='') {
+  if (title === '') {
     alert('Title should be entered!');
   } else {
 
-  const options = {
-    body: body,
-    actions: [
-      {
-        action: 'confirm',
-        title: 'Agree'
-      },
-      {
-        action: 'cancel',
-        title: 'Disagree'
-      }
-    ]
-  };
+    const options = {
+      body: body,
+      actions: [
+        {
+          action: 'confirm',
+          title: 'Agree'
+        },
+        {
+          action: 'cancel',
+          title: 'Disagree'
+        }
+      ]
+    };
 
-  //new Notification('Tilte',options);
-  navigator.serviceWorker.ready.then((registration) => {
-    registration.showNotification(title, options);
-  });
-}
+    //new Notification('Tilte',options);
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.showNotification(title, options);
+    });
+  }
 }
 
 function requestUserPermission() {
   Notification.requestPermission()
-  .then((permission) => {
-    if(permission === 'granted') {
-      //showMyNotification();
-    }
-  })
-  .catch((error) => {
-    console.log('Error:', error);
-  });
+    .then((permission) => {
+      if (permission === 'granted') {
+        showNotificationButton.hidden = false;
+        sendNotificationButton.hidden = true;
+        notificationTitle.disabled = true;
+        notificationBody.disabled = true;
+      }
+    })
+    .catch((error) => {
+      console.log('Error:', error);
+    });
 }
 
 showNotificationButton.addEventListener('click', showMyNotification);
