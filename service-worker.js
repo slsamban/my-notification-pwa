@@ -11,14 +11,14 @@ const casheName = 'version3'
       caches.open(casheName)
           .then(function (cashe) {
               cashe.addAll([
-                //'/my-notification-pwa/',
-                //'/my-notification-pwa/index.html',
-                //'/my-notification-pwa/css/styles.css',
-                //'/my-notification-pwa/image/logo.png',
-                //'/my-notification-pwa/js/scripts.js',
-                //'/my-notification-pwa/manifest.json',
-                //'/my-notification-pwa/icons/icon-192x192.png',
-                //'/my-notification-pwa/icons/icon-512x512.png'
+                '/my-notification-pwa/',
+                '/my-notification-pwa/index.html',
+                '/my-notification-pwa/css/styles.css',
+                '/my-notification-pwa/image/logo.png',
+                '/my-notification-pwa/js/scripts.js',
+                '/my-notification-pwa/manifest.json',
+                '/my-notification-pwa/icons/icon-192x192.png',
+                '/my-notification-pwa/icons/icon-512x512.png'
               ]);
           })
   );
