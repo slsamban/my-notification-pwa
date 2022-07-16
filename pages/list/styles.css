@@ -1,0 +1,58 @@
+
+/* Items */
+.song-item {
+  background-color: #fff;
+  padding: 15px;
+  border: solid 1px #aaa;
+  margin-top: 10px;
+}
+
+.span {
+  color: #777;
+  font-size: 19px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.song-item h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.h4 {
+  color: #333;
+  font-size: 19px;
+  font-weight: normal;
+  display: inline-block;
+  margin: 0 0 0 165px;
+  padding: 0;
+}
+.h5 {
+  color: #333;
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.song-item div {
+  color: #333;
+  font-size: 19px;
+  margin: 10px 0;
+}
+
+/* Button */
+
+.button {
+  display: inline-block;
+  font-size: 17px;
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+.buttonBlue {background-color: blue; margin: 10px 10px 0 130px;}
+.buttonRed {background-color: red; margin: 10px 10px 0 0;}
