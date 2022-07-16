@@ -61,12 +61,10 @@ function showMyNotification() {
   const title = document.getElementById('notification-title').value;
   const body = document.getElementById('notification-body').value;
 
-  console.log(title);
 
   if (title === '') {
     alert('Title should be entered!');
   } else {
-    console.log(title);
     const options = {
       body: body,
       actions: [
