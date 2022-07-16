@@ -99,5 +99,5 @@ function requestUserPermission() {
     });
 }
 
-showNotificationButton.addEventListener('click', showMyNotification);
-sendNotificationButton.addEventListener('click', requestUserPermission);
+document.getElementById('show-notification-button').addEventListener('click', showMyNotification);
+document.getElementById('send-notification-button').addEventListener('click', requestUserPermission);
