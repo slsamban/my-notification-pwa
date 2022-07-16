@@ -23,8 +23,8 @@ const sendNotificationButton = document.getElementById('send-notification-button
 const notificationTitle = document.getElementById('notification-title');
 const notificationBody = document.getElementById('notification-body');
 
-document.getElementById('show-notification-button').addEventListener('click', showMyNotification);
-document.getElementById('send-notification-button').addEventListener('click', requestUserPermission);
+showNotificationButton.addEventListener('click', showMyNotification);
+sendNotificationButton.addEventListener('click', requestUserPermission);
 
 const permission = Notification.permission;
 console.log('Permission:', permission);
@@ -65,6 +65,7 @@ function showMyNotification() {
     alert('Title should be entered!');
   } else {
 
+    console.log(title,body);
     const options = {
       body: body,
       actions: [
