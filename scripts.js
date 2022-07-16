@@ -23,6 +23,9 @@ const sendNotificationButton = document.getElementById('send-notification-button
 const notificationTitle = document.getElementById('notification-title');
 const notificationBody = document.getElementById('notification-body');
 
+showNotificationButton.addEventListener('click', showMyNotification);
+sendNotificationButton.addEventListener('click', requestUserPermission);
+
 const permission = Notification.permission;
 console.log('Permission:', permission);
 
@@ -98,6 +101,3 @@ function requestUserPermission() {
       console.log('Error:', error);
     });
 }
-
-document.getElementById('show-notification-button').addEventListener('click', showMyNotification);
-document.getElementById('send-notification-button').addEventListener('click', requestUserPermission);
