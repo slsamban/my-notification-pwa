@@ -79,7 +79,6 @@ function showMyNotification() {
       ]
     };
 
-    //new Notification('Tilte',options);
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification(title, options);
     });
@@ -93,8 +92,8 @@ function requestUserPermission() {
       if (permission === 'granted') {
         showNotificationButton.hidden = false;
         sendNotificationButton.hidden = true;
-        notificationTitle.disabled = true;
-        notificationBody.disabled = true;
+        notificationTitle.disabled = false;
+        notificationBody.disabled = false;
       }
     })
     .catch((error) => {
