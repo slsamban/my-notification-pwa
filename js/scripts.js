@@ -30,7 +30,7 @@ switch (permission) {
   case 'granted':
     //sendNotificationButton.hidden = true
     console.log('Granted!')
-    showMyNotification();
+    //showMyNotification();
     break;
 
   case 'denied':
