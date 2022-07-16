@@ -8,7 +8,7 @@ const casheName = 'version1'
   self.skipWaiting();
 
   const message = document.getElementById('no-storage');
-  message = "Agreed";
+  message.value = 'Agreed';
 
   event.waitUntil(
       caches.open(casheName)
@@ -71,12 +71,12 @@ self.addEventListener('notificationclicked', (event) => {
   switch (event.action) {
     case 'confirm' :
       console.log('Agreed!');
-      message = "Agreed";
+      message.value = 'Agreed';
       break;
     
     case 'cancel' :
       console.log('Disagreed!');
-      message = "Disagreed";
+      message.value = 'Disagreed';
       break;
   }
 })
