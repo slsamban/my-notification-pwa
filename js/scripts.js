@@ -30,7 +30,7 @@ switch (permission) {
   case 'granted':
     //sendNotificationButton.hidden = true
     console.log('Granted!')
-    showNotification();
+    showMyNotification();
     break;
 
   case 'denied':
@@ -50,10 +50,18 @@ switch (permission) {
     break;
 }
 
-function showNotification() {
+function showMyNotification() {
   console.log('In show Notifications!')
+
+  const title = document.getElementById('notification-title').value;
+  const body = document.getElementById('notification-body').value;
+
+  if(title==='') {
+    alert('Title should be entered!');
+  } else {
+
   const options = {
-    body: 'Thank you',
+    body: body,
     actions: [
       {
         action: 'agree',
@@ -68,18 +76,22 @@ function showNotification() {
 
   //new Notification('Tilte',options);
   navigator.serviceWorker.ready.then((registration) => {
-    registration.showNotification("Title goes here", options);
+    registration.showNotification(title, options);
   });
+}
 }
 
 function requestUserPermission() {
   Notification.requestPermission()
   .then((permission) => {
     if(permission === 'granted') {
-      showNotification();
+      //showMyNotification();
     }
   })
   .catch((error) => {
     console.log('Error:', error);
   });
 }
+
+showNotificationButton.addEventListener('click', showMyNotification);
+sendNotificationButton.addEventListener('click', requestUserPermission);
