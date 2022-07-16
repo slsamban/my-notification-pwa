@@ -26,9 +26,6 @@ const casheName = 'version1'
 });
 
 
-my-notification-pwa
-
-
 /**
  * On Activate Event
  * Triggered when the service worker is activated
@@ -65,7 +62,7 @@ self.addEventListener('fetch', function (event) {
   );
 });
 
-self.addEventListener('notificationclick', (event) => {
+self.addEventListener('notificationclicked', (event) => {
   switch (event.action) {
     case 'confirm' :
       console.log('Agreed!')
