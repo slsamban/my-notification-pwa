@@ -7,6 +7,9 @@ const casheName = 'version1'
   //console.log('SW Installed:', event);
   self.skipWaiting();
 
+  const message = document.getElementById('no-storage');
+  message = "Agreed";
+
   event.waitUntil(
       caches.open(casheName)
           .then(function (cashe) {
@@ -63,13 +66,17 @@ self.addEventListener('fetch', function (event) {
 });
 
 self.addEventListener('notificationclicked', (event) => {
+
+  const message = document.getElementById('no-storage');
   switch (event.action) {
     case 'confirm' :
-      console.log('Agreed!')
+      console.log('Agreed!');
+      message = "Agreed";
       break;
     
     case 'cancel' :
-      console.log('Disagreed!')
+      console.log('Disagreed!');
+      message = "Disagreed";
       break;
   }
 })
