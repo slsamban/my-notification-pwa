@@ -65,7 +65,7 @@ function showMyNotification() {
     alert('Title should be entered!');
   } else {
 
-    console.log(title,body);
+    console.log(title);
     const options = {
       body: body,
       actions: [
