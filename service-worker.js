@@ -15,7 +15,7 @@ const casheName = 'version1'
                 '/my-notification-pwa/index.html',
                 '/my-notification-pwa/css/styles.css',
                 '/my-notification-pwa/image/logo.png',
-                '/my-notification-pwa/js/scripts.js',
+                '/my-notification-pwa/scripts.js',
                 '/my-notification-pwa/manifest.json',
                 '/my-notification-pwa/icons/icon-192x192.png',
                 '/my-notification-pwa/icons/icon-512x512.png'
@@ -67,11 +67,11 @@ self.addEventListener('fetch', function (event) {
 
 self.addEventListener('notificationclick', (event) => {
   switch (event.action) {
-    case 'agree' :
+    case 'confirm' :
       console.log('Agreed!')
       break;
     
-    case 'disagree' :
+    case 'cancel' :
       console.log('Disagreed!')
       break;
   }
