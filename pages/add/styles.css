@@ -1,0 +1,35 @@
+/* Fields */
+#song-add-form .field {
+  margin-bottom: 30px;
+}
+
+#song-add-form .field label {
+  display: block;
+  line-height: 30px;
+  margin-top: 10px;
+}
+
+#song-add-form .field input{
+  width: 385px;
+  font-size: 19px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#song-add-form .field h1 {
+  color: #333;
+  font-size: 30px;
+  padding: 0;
+}
+
+/* Button */
+#song-add-form button {
+  font-size: 17px;
+  width: 100px;
+  height: 40px;
+  margin: 0 10px 0 285px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
