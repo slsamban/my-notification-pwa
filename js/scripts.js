@@ -3,8 +3,8 @@
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register(
-      '/service-worker.js',
-      { scope: '/' }
+      '/my-notification-pwa/service-worker.js',
+      { scope: '/my-notification-pwa/' }
     )
     .then(function (registration) {
       //console.log('Service Worker registered successfully:', registration);
