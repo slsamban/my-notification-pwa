@@ -84,6 +84,7 @@ function showMyNotification() {
 }
 
 function requestUserPermission() {
+  console.log('Requesting Permissions!')
   Notification.requestPermission()
     .then((permission) => {
       if (permission === 'granted') {
