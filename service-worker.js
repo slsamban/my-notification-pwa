@@ -1,4 +1,4 @@
-const casheName = 'version3'
+const casheName = 'version1'
 /**
  * On Install Event
  * Triggered when the service worker is installed
@@ -72,7 +72,7 @@ self.addEventListener('notificationclick', (event) => {
       break;
     
     case 'disagree' :
-      console.log('greed!')
+      console.log('Disagreed!')
       break;
   }
 })
