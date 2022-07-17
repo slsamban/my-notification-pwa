@@ -68,12 +68,12 @@ self.addEventListener('notificationclick', (event) => {
   switch (event.action) {
     case 'confirm' :
       console.log('Agreed!');
-      message.value = 'Agreed';
+      message.value = "So we both agree on that!";
       break;
     
     case 'cancel' :
       console.log('Disagreed!');
-      message.value = 'Disagreed';
+      message.value = "Let's agree to disagree.";
       break;
   }
 })
